@@ -11,7 +11,7 @@ public enum E_OccupantType
     Default
 }
 
-public class TileBase : MonoBehaviour {
+public class BaseTile : MonoBehaviour {
 
     public bool IsOccupied;
     public E_OccupantType OccupantType;
