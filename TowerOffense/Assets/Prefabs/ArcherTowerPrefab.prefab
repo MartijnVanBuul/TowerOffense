@@ -19,8 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4833551351747140}
+  - component: {fileID: 114470882996537582}
   m_Layer: 0
-  m_Name: ArcherTower
+  m_Name: ArcherTowerPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +141,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115516799429402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0057474077, y: 0.121016294, z: -0.61865914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4094626255903886}
@@ -153,7 +154,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839969026395844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0057474077, y: 0.121016294, z: -0.61865914}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4094626255903886}
@@ -202,6 +203,30 @@ MonoBehaviour:
   vertexCount: 80
   lineWidth: 0.1
   radius: 5
+--- !u!114 &114470882996537582
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1112192063051396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe92f37e768009949a6c7f8859c78674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerType: 0
+  IsActive: 0
+  CanAttack: 0
+  IsOnCooldown: 0
+  EnemiesInRange: []
+  TowerAttackRange: 4
+  TowerVisionRange: 6
+  TowerCost: 2
+  TowerDamage: 2
+  TowerLevel: 1
+  TowerCooldown: 2
+  TowerAttackRangeIndicator: {fileID: 114685913784989562}
+  TowerVisionRangeIndicator: {fileID: 114145716315715642}
 --- !u!114 &114685913784989562
 MonoBehaviour:
   m_ObjectHideFlags: 1

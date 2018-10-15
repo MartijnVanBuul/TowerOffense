@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArcherTower : BaseTower
-{
+public class Warrior : BaseEnemy {
 
 	// Use this for initialization
 	new void Start () {
@@ -11,7 +10,7 @@ public class ArcherTower : BaseTower
     }
 
     // Update is called once per frame
-    new void Update () {
-        base.Update();
+    void Update () {
+		
 	}
 }

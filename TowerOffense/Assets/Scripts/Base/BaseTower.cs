@@ -30,6 +30,7 @@ public class BaseTower : MonoBehaviour {
     [Header("References")]
     public CircularLineRenderer TowerAttackRangeIndicator;
     public CircularLineRenderer TowerVisionRangeIndicator;
+    public LineRenderer TowerLineOfSightIndicator;
 
     public void Start()
     {
@@ -41,11 +42,24 @@ public class BaseTower : MonoBehaviour {
 
     public void Update()
     {
+        if (targetEnemy && Vector3.Distance(targetEnemy.transform.position, transform.position) < TowerAttackRange)
+        {
+            TowerLineOfSightIndicator.positionCount = 2;
+            TowerLineOfSightIndicator.SetPositions(new Vector3[] { transform.position, targetEnemy.transform.position });
+        }
+        else
+            TowerLineOfSightIndicator.positionCount = 0;
+
         if (IsOnCooldown)
             return;
 
-        if (EnemiesInRange.Count > 0)
+        if (EnemyManager.instance)
+            EnemiesInRange = EnemyManager.instance.GetEnemiesInRange(transform.position, TowerAttackRange);
+
+        if (EnemiesInRange != null && EnemiesInRange.Count > 0)
             targetEnemy = DeterminePriority();
+        else
+            targetEnemy = null;
 
         if (targetEnemy)
             AttackEnemy(targetEnemy);
@@ -72,7 +86,9 @@ public class BaseTower : MonoBehaviour {
 
     private void AttackEnemy(BaseEnemy target)
     {
+        Debug.Log("Is attacking");
         target.TakeDamage(TowerDamage);
+        IsOnCooldown = true;
 
         Invoke("ResetCooldown", TowerCooldown);
     }
