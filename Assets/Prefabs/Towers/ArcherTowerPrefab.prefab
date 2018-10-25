@@ -227,6 +227,7 @@ MonoBehaviour:
   TowerCooldown: 2
   TowerAttackRangeIndicator: {fileID: 114685913784989562}
   TowerVisionRangeIndicator: {fileID: 114145716315715642}
+  TowerLineOfSightIndicator: {fileID: 0}
 --- !u!114 &114685913784989562
 MonoBehaviour:
   m_ObjectHideFlags: 1
