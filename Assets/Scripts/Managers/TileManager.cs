@@ -34,7 +34,8 @@ public class TileManager : MonoBehaviour {
         {
             for (int j = -InitialDepth / 2; j <= InitialDepth / 2; j++)
             {
-                Instantiate(TilePrefabs[0], new Vector3(i, 0, j), Quaternion.identity);
+                GameObject tile = Instantiate(TilePrefabs[0], new Vector3(i, 0, j), Quaternion.identity);
+                tile.transform.SetParent(transform);
             }
         }
     }

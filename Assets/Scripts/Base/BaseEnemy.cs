@@ -17,6 +17,17 @@ public class BaseEnemy : MonoBehaviour {
     {
         Health = Mathf.Clamp(Health - damage, 0, MaxHealth);
 
+        if (Health == 0)
+            InitiateDeath();
+
         return Health == 0;
+    }
+
+    public void InitiateDeath()
+    {
+        if (EnemyManager.instance)
+            EnemyManager.instance.RemoveEnemy(this);
+
+        Destroy(gameObject);
     }
 }

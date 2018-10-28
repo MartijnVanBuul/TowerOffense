@@ -37,7 +37,7 @@ public class CircularLineRenderer : MonoBehaviour
         myLineRenderer.positionCount = vertexCount;
         for (int i = 0; i < myLineRenderer.positionCount; i++)
         {
-            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), 0f, radius * Mathf.Sin(theta));
+            Vector3 pos = transform.position + new Vector3(radius * Mathf.Cos(theta), 0f, radius * Mathf.Sin(theta));
             myLineRenderer.SetPosition(i, pos);
             theta += deltaTheta;
         }
@@ -52,7 +52,7 @@ public class CircularLineRenderer : MonoBehaviour
         Vector3 oldPos = Vector3.zero;
         for (int i = 0; i < vertexCount + 1; i++)
         {
-            Vector3 pos = new Vector3(radius * Mathf.Cos(theta), 0f, radius * Mathf.Sin(theta));
+            Vector3 pos = transform.position + new Vector3(radius * Mathf.Cos(theta), 0f, radius * Mathf.Sin(theta));
             Gizmos.DrawLine(oldPos, transform.position + pos);
             oldPos = transform.position + pos;
 
